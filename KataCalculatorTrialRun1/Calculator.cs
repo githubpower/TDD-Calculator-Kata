@@ -8,5 +8,15 @@ namespace KataCalculatorTrialRun1
 {
     public class Calculator
     {
+        public Calculator()
+        {
+        }
+
+        public int Add(string numbers)
+        { 
+            return 0;
+        }
     }
+
+    
 }
