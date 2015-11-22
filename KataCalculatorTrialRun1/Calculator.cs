@@ -14,13 +14,32 @@ namespace KataCalculatorTrialRun1
         
         public int Add(string numbers)
         {
-            List<int> numbersCollection = new List<int>();
+
             if (numbers == string.Empty)
                 return 0;
             else
+            {
+                List<int> numbersCollection = new List<int>();
                 numbersCollection = convertNumbersToIntCollection(numbers);
-            return numbersCollection.Sum();
 
+                ValidateNumbers(numbersCollection);
+                return numbersCollection.Sum();
+            }
+        }
+
+        private void ValidateNumbers(List<int> numbersInputted)
+        {
+            var isValid = !(hasNegativeValues(numbersInputted));
+            if (!isValid)
+            {
+                var negativeInts = numbersInputted.Where(i => i < 0);
+                throw new Exception("negatives not allowed " + negativeInts.First().ToString()); 
+            }
+        }
+
+        private bool hasNegativeValues(List<int> numbersInputted)
+        {
+            return numbersInputted.Any(i => i < 0);
         }
 
         private List<int> convertNumbersToIntCollection(string numbers)
@@ -28,17 +47,14 @@ namespace KataCalculatorTrialRun1
             
             char defaultInputDelimiter = ',';
             numbers = standardiseToDefaultDelimiter(numbers, defaultInputDelimiter);
-            
             List<int> numbersInputted = new List<int>();
             numbersInputted = numbers.Split(defaultInputDelimiter)
                               .Select(x => int.Parse(x)).ToList<int>();
             return numbersInputted;
         }
 
-      
         private string standardiseToDefaultDelimiter(string numbers, char defaultDelimiter)
         {
-
             if (numbers.StartsWith("//"))
             {   char customDelimiter = extractCustomDelimiter(numbers);
                 numbers = removeCustomDelimiterInfoPrepended(numbers);
