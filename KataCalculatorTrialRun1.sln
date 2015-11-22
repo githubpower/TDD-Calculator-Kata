@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataCalculatorTrialRun1", "KataCalculatorTrialRun1\KataCalculatorTrialRun1.csproj", "{EBA2C97F-18BA-4C81-93BC-3D7B3F3910BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataCalculatorTrialRun1.Tests", "KataCalculatorTrialRun1.Tests\KataCalculatorTrialRun1.Tests.csproj", "{7C019708-59E8-4989-9364-D95FD43F7948}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBA2C97F-18BA-4C81-93BC-3D7B3F3910BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA2C97F-18BA-4C81-93BC-3D7B3F3910BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA2C97F-18BA-4C81-93BC-3D7B3F3910BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA2C97F-18BA-4C81-93BC-3D7B3F3910BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C019708-59E8-4989-9364-D95FD43F7948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C019708-59E8-4989-9364-D95FD43F7948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C019708-59E8-4989-9364-D95FD43F7948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C019708-59E8-4989-9364-D95FD43F7948}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
