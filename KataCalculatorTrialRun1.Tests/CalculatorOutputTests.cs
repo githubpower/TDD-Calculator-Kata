@@ -71,6 +71,13 @@ namespace KataCalculatorTrialRun1.Tests
              Assert.That(ex.Message, Is.EqualTo("negatives not allowed -1"));
          }
 
+         [Test]
+         public void Add_IncludesManyNegativeNumber_ThrowsExceptionWithCustomMessage()
+         {
+             Calculator calculator = new Calculator();
+             var ex = Assert.Throws<Exception>(() => calculator.Add("-1,2,-3"));
+             Assert.That(ex.Message, Is.EqualTo("negatives not allowed -1,-3"));
+         }
 
     }
 }
