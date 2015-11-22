@@ -1,23 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KataCalculatorTrialRun1
 {
     public class Calculator
     {
+       
         public Calculator()
         {
+          
         }
 
         public int Add(string numbers)
         {
+            List<int> numbersCollection = new List<int>();
             if (numbers == string.Empty)
                 return 0;
             else
-                return int.Parse(numbers);
+                numbersCollection = convertNumbersToIntCollection(numbers);
+            return numbersCollection.Sum();
+
+        }
+
+        private List<int> convertNumbersToIntCollection(string numbers)
+        {
+            List<int> numbersInputted = new List<int>();
+            numbersInputted = numbers.Split(',')
+                              .Select(x => int.Parse(x)).ToList<int>();
+            return numbersInputted;
+
         }
     }
 
