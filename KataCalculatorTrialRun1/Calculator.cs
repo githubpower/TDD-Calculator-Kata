@@ -14,7 +14,6 @@ namespace KataCalculatorTrialRun1
         
         public int Add(string numbers)
         {
-
             if (numbers == string.Empty)
                 return 0;
             else
@@ -32,14 +31,31 @@ namespace KataCalculatorTrialRun1
             var isValid = !(hasNegativeValues(numbersInputted));
             if (!isValid)
             {
-                var negativeInts = numbersInputted.Where(i => i < 0);
-                throw new Exception("negatives not allowed " + negativeInts.First().ToString()); 
+                string theInvalidNumbers = getNegativeValues(numbersInputted);
+                throw new Exception("negatives not allowed " + theInvalidNumbers); 
             }
         }
 
         private bool hasNegativeValues(List<int> numbersInputted)
         {
             return numbersInputted.Any(i => i < 0);
+        }
+
+        private string getNegativeValues(List<int> numbersInputted)
+        {
+             string invalidNumbersSuppliedMsg = "";
+             var negativeInts = numbersInputted.Where(i => i < 0);
+         
+                foreach (int i in negativeInts)
+                {
+                    invalidNumbersSuppliedMsg += i.ToString();
+                    if (i != negativeInts.Last())
+                    {
+                        invalidNumbersSuppliedMsg += ",";
+                    }
+
+                }
+            return invalidNumbersSuppliedMsg;
         }
 
         private List<int> convertNumbersToIntCollection(string numbers)
