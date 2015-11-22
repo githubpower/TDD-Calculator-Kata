@@ -54,6 +54,15 @@ namespace KataCalculatorTrialRun1.Tests
              Calculator calculator = new Calculator();
              Assert.AreEqual(3, calculator.Add("//;\n1;2"));
          }
+
+         [Test]
+         [ExpectedException(typeof(Exception))]
+         public void Add_NegativeNumbers_ThrowsException()
+         {
+             Calculator calculator = new Calculator();
+             calculator.Add("-1, 14,3");
+         }
+
     }
 }
 
