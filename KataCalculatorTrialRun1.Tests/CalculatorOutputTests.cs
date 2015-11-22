@@ -33,6 +33,13 @@ namespace KataCalculatorTrialRun1.Tests
              Calculator calculator = new Calculator();
              Assert.AreEqual(15, calculator.Add("1,2,3,4,5"));
          }
+
+         [Test]
+         public void Add_MultipleNumbersInNewLineSeperatedString_OutputSumOfNumbersAsInt()
+         {
+             Calculator calculator = new Calculator();
+             Assert.AreEqual(15, calculator.Add("1\n2\n3\n4\n5"));
+         }
     }
 }
 
