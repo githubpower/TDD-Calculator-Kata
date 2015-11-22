@@ -12,6 +12,13 @@ namespace KataCalculatorTrialRun1.Tests
              Calculator calculator = new Calculator();
              Assert.AreEqual(0, calculator.Add(""));
          }
+
+         [Test]
+         public void Add_SingleNumberString_OutputNumberAsInt()
+         {
+             Calculator calculator = new Calculator();
+             Assert.AreEqual(1, calculator.Add("1"));
+         }
     }
 }
 
