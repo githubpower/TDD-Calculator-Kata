@@ -47,6 +47,13 @@ namespace KataCalculatorTrialRun1.Tests
             Calculator calculator =new Calculator();
             Assert.AreEqual(10, calculator.Add("2,2\n2,2\n2"));
         }
+
+         [Test]
+         public void Add_MultipleNumbersCustomSeperated_OutputSumOfNumbersAsInt()
+         {
+             Calculator calculator = new Calculator();
+             Assert.AreEqual(3, calculator.Add("//;\n1;2"));
+         }
     }
 }
 
