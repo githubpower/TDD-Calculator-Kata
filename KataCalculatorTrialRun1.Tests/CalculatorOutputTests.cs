@@ -26,6 +26,13 @@ namespace KataCalculatorTrialRun1.Tests
              Calculator calculator = new Calculator();
              Assert.AreEqual(3, calculator.Add("1,2"));
          }
+
+         [Test]
+         public void Add_MultipleNumbersInCommaSeperatedString_OutputSumOfNumbersAsInt()
+         {
+             Calculator calculator = new Calculator();
+             Assert.AreEqual(15, calculator.Add("1,2,3,4,5"));
+         }
     }
 }
 
