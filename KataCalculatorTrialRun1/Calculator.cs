@@ -25,11 +25,17 @@ namespace KataCalculatorTrialRun1
 
         private List<int> convertNumbersToIntCollection(string numbers)
         {
+            char delimiter = getDelimiter(numbers);
             List<int> numbersInputted = new List<int>();
-            numbersInputted = numbers.Split(',')
+            numbersInputted = numbers.Split(delimiter)
                               .Select(x => int.Parse(x)).ToList<int>();
             return numbersInputted;
 
+        }
+
+        private char getDelimiter(string numbers)
+        {
+            return (numbers.Contains('\n')) ? '\n' : ',';         
         }
     }
 
