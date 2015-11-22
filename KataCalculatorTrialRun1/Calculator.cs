@@ -6,10 +6,9 @@ namespace KataCalculatorTrialRun1
 {
     public class Calculator
     {
-       
         public Calculator()
         {
-          
+              
         }
 
         public int Add(string numbers)
@@ -25,17 +24,25 @@ namespace KataCalculatorTrialRun1
 
         private List<int> convertNumbersToIntCollection(string numbers)
         {
-            char delimiter = getDelimiter(numbers);
+            char defaultInputDelimiter = ',';
+            numbers = standardiseToDefaultDelimiter(numbers, defaultInputDelimiter);
+            
             List<int> numbersInputted = new List<int>();
-            numbersInputted = numbers.Split(delimiter)
+            numbersInputted = numbers.Split(defaultInputDelimiter)
                               .Select(x => int.Parse(x)).ToList<int>();
-            return numbersInputted;
 
+            return numbersInputted;
         }
 
-        private char getDelimiter(string numbers)
+        private string standardiseToDefaultDelimiter(string numbers, char defaultDelimiter)
         {
-            return (numbers.Contains('\n')) ? '\n' : ',';         
+            string[] delimiterOptions = { ",", "\n" };
+            if (delimiterOptions.Any(numbers.Contains))
+            {
+             numbers =  numbers.Replace("\n", defaultDelimiter.ToString());
+            }
+            return numbers;
+            
         }
     }
 
